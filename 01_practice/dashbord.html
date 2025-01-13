@@ -17,13 +17,88 @@
 
 <body>
   <div class="container py-4">
-    <!-- sign in form -->
-    
-      <button type="button" class="btn btn-danger mt-2" id="logout_btn" style="float:right">Logout</button>
-     
+    <!-- add new user form -->
 
 
-     
+    <button type="button" class="btn btn-danger mt-2" id="logout_btn" style="float:right">Logout</button>
+    <div class="row justify-content-between row-gap-3 border">
+      <div class="col-lg-5 col-md-8 col-10">
+        <div class="row justify-content-center">
+          <form>
+            <h2 class="text-center mb-3">New user form</h2>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row mb-2">
+              <div class="col">
+                <div data-mdb-input-init class="form-outline">
+                  <input type="text" id="newUser_firstName" class="form-control" />
+                  <label class="form-label" for="newUser_firstName">First name</label>
+                </div>
+              </div>
+              <div class="col">
+                <div data-mdb-input-init class="form-outline">
+                  <input type="text" id="newUser_lastName" class="form-control" />
+                  <label class="form-label" for="newUser_lastName">Last name</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Text input -->
+            <div data-mdb-input-init class="form-outline mb-2">
+              <input type="text" id="company_Name" class="form-control" />
+              <label class="form-label" for="company_Name">Company name</label>
+            </div>
+
+            <!-- Text input -->
+            <div data-mdb-input-init class="form-outline mb-2">
+              <input type="text" id="company_Address" class="form-control" />
+              <label class="form-label" for="company_Address">Address</label>
+            </div>
+
+            <!-- Email input -->
+            <div data-mdb-input-init class="form-outline mb-2">
+              <input type="email" id="company_email" class="form-control" />
+              <label class="form-label" for="company_email">Email</label>
+            </div>
+
+            <!-- Submit button -->
+            <button data-mdb-ripple-init type="button" id="addNewUser_btn" class="btn btn-primary w-100 mb-2">Add
+              User</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-8 col-10">
+        <div class="row justify-content-center">
+          <table class="table table-bordered">
+
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Company</th>
+                <th scope="col">Address</th>
+                <th scope="col">Email</th>
+              </tr>
+            </thead>
+            <tbody id="usersDataTable">
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
   </div>
 
 
@@ -43,6 +118,7 @@
   <script type="module" src="./js files/config.js"></script>
   <script type="module" src="./js files/auth.js"></script>
   <script type="module" src="./js files/app.js"></script>
+  <script type="module" src="./js files/user.js"></script>
 
 </body>
 
