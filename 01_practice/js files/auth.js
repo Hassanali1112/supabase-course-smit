@@ -81,6 +81,22 @@ signin_btn.addEventListener("click",async ()=>{
 
 
 })
+// +++++++++++++++++++++++++++++++=+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+const signinSession_btn = document.querySelector("#signinSession_btn");
+
+signinSession_btn.addEventListener("click", async()=>{
+  try { 
+    const { data, error } = await supabase.auth.getSession();
+    if(error) throw error;
+    if(data){
+      console.log(data)
+    }
+    
+  } catch (error) {
+    
+  }
+})
 
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -91,16 +107,11 @@ logout_btn.addEventListener("click", async ()=>{
   console.log("logout");
   try {
     const { error } = await supabase.auth.signOut();
-    if(error){
-      Swal.fire({
-          title: "Session expired",
-          text: "user logged out successfully",
-          icon: "info",
-        });
-        console.log("llll")
-    }
+
+    if(error) throw error
+   
   } catch (error){
-    console.log(error)
+    
   }finally{
     alert("finally")
   }
