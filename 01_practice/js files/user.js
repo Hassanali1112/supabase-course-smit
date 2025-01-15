@@ -16,6 +16,7 @@ addNewUseBtn.addEventListener("click", async () => {
     });
 
     if (error) throw error;
+    showData()
   } catch (error) {
     console.log(error);
   }
@@ -29,6 +30,7 @@ addNewUseBtn.addEventListener("click", async () => {
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+const userDataCol = document.querySelector("#userDataCol");
 const usersDataTable = document.querySelector("#usersDataTable");
 
 const showData = async () => {
@@ -36,19 +38,22 @@ const showData = async () => {
     const { data, error } = await supabase.from("users").select();
 
     if (error) throw error;
-    if (data) {
-      console.log(data)
+    
+    if (data.length !== 0 ) {
+      console.log(data.length);
+      userDataCol.classList.remove("d-none")
+      // console.log(data)
       usersDataTable.innerHTML = ''
       data.map(
         (user) =>
           (usersDataTable.innerHTML += `
                <tr>
-                <th scope="row">${user.id}</th>
                 <td>${user.first_name}</td>
                 <td>${user.last_name}</td>
                 <td>${user.company_name}</td>
                 <td>${user.address}</td>
                 <td>${user.email_address}</td>
+                <td><i class="fa-solid fa-trash deleteUser" onClick="deleteUser(${user.id})" ></i></td>
               </tr>
         `)
       );
@@ -56,3 +61,14 @@ const showData = async () => {
   } catch (error) {}
 };
 window.onload = showData();
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+const deleteUser = document.querySelectorAll(".deleteUser")
+console.log(deleteUser)
+// for(let i = 0; i < d; i++){
+//   console.log(i)
+// }
+// deleteUser.addEventListener("click", ()=>{
+//   console.log("clicked")
+// })
