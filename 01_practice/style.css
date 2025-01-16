@@ -43,3 +43,9 @@ body {
   background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);
   background: linear-gradient(to right, #ffd194, #70e1f5);
 }
+
+.navigateLink{
+  text-decoration: none;
+  font-size: .8rem;
+  text-align: center;
+}

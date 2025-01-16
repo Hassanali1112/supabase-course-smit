@@ -9,9 +9,7 @@ const passwordRegex =
 if (signup_btn) {
   signup_btn.addEventListener("click", async () => {
     event.preventDefault();
-    console.log(signupEmail.value);
     if (emailRegex.test(signupEmail.value)) {
-      console.log(signupPass.value);
       if (passwordRegex.test(signupPass.value)) {
         try {
           const { data, error } = await supabase.auth.signUp({
@@ -72,11 +70,9 @@ if (signin_btn) {
           text: "welcome User",
           icon: "success",
         });
-        window.location.assign("/dashbord.html")
+        window.location.assign("/dashbord.html");
       }
-    } catch (error) {
-
-    }
+    } catch (error) {}
   });
 }
 
@@ -104,11 +100,10 @@ if (logout_btn) {
   logout_btn.addEventListener("click", async () => {
     try {
       const { error } = await supabase.auth.signOut();
-      window.location.assign("/login.html")
+      window.location.assign("/login.html");
       if (error) throw error;
     } catch (error) {
     } finally {
-      
     }
   });
 }

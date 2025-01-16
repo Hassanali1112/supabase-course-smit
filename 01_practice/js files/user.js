@@ -16,16 +16,16 @@ addNewUseBtn.addEventListener("click", async () => {
     });
 
     if (error) throw error;
-    showData()
+    showData();
   } catch (error) {
     console.log(error);
   }
 
-  console.log(firstName.value);
-  console.log(lastName.value);
-  console.log(companyName.value);
-  console.log(companyAddress.value);
-  console.log(companyEmail.value);
+  firstName.value = "";
+  lastName.value = "";
+  companyName.value = "";
+  companyAddress.value = "";
+  companyEmail.value = "";
 });
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -38,12 +38,12 @@ const showData = async () => {
     const { data, error } = await supabase.from("users").select();
 
     if (error) throw error;
-    
-    if (data.length !== 0 ) {
+
+    if (data.length !== 0) {
       console.log(data.length);
-      userDataCol.classList.remove("d-none")
+      userDataCol.classList.remove("d-none");
       // console.log(data)
-      usersDataTable.innerHTML = ''
+      usersDataTable.innerHTML = "";
       data.map(
         (user) =>
           (usersDataTable.innerHTML += `
@@ -64,8 +64,8 @@ window.onload = showData();
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-const deleteUser = document.querySelectorAll(".deleteUser")
-console.log(deleteUser)
+const deleteUser = document.querySelectorAll(".deleteUser");
+console.log(deleteUser);
 // for(let i = 0; i < d; i++){
 //   console.log(i)
 // }
