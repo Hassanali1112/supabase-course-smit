@@ -17,6 +17,8 @@ if (signup_btn) {
             password: signupPass.value,
           });
           if (error) throw error;
+          signupEmail.value = "";
+          signupPass.value = "";
 
           if (data) {
             console.log(data);
