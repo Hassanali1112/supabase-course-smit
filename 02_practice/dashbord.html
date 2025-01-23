@@ -17,14 +17,49 @@
   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <body>
-  <div class="container py-4">
-    <!-- add new user form -->
+
+  <div class="container mt-4">
+    <div class="row mt-3">
+      <div class="col-12 col-md-12 col-lg-6">
+  
+  
+  
+        <div class="row g-3">
+          <div class="col-md-12">
+            <label for="postContent" class="form-label">Post Content</label>
+            <textarea name="" class="form-control" id="postContent"></textarea>
+          </div>
+  
+          <div class="col-md-12">
+            <label for="postFile" class="form-label">Upload Image (optional)</label>
+            <input id="postFile" type="file" class="form-control">
+          </div>
+  
+          <div class="col-md-12">
+            <button id="postBtn" class="btn btn-primary w-100"> Post </button>
+          </div>
+  
+  
+  
+        </div>
+      </div>
+      <div class="col-12 col-md-12 col-lg-6">
+  
+      </div>
+    </div>
+  
+  
+  </div>
+
+
+  <!-- <div class="container py-4">
+    add new user form /
     <div class="row justify-content-lg-between g-lg-0 justify-content-center g-4">
       <div class="col-lg-5 col-md-10 col-sm-12 col-10">
         <div class="row justify-content-center">
           <form>
             <h2 class="text-center mb-3">New user form</h2>
-            <!-- 2 column grid layout with text inputs for the first and last names -->
+            2 column grid layout with text inputs for the first and last names /
             <div class="row mb-2">
               <div class="col">
                 <div data-mdb-input-init class="form-outline">
@@ -40,25 +75,25 @@
               </div>
             </div>
 
-            <!-- Text input -->
+            Text input /
             <div data-mdb-input-init class="form-outline mb-2">
               <input type="text" id="company_Name" class="form-control" />
               <label class="form-label" for="company_Name">Company name</label>
             </div>
 
-            <!-- Text input -->
+            Text input  /
             <div data-mdb-input-init class="form-outline mb-2">
               <input type="text" id="company_Address" class="form-control" />
               <label class="form-label" for="company_Address">Address</label>
             </div>
 
-            <!-- Email input -->
+            Email input /
             <div data-mdb-input-init class="form-outline mb-2">
               <input type="email" id="company_email" class="form-control" />
               <label class="form-label" for="company_email">Email</label>
             </div>
 
-            <!-- Submit button -->
+            Submit button /
             <button data-mdb-ripple-init type="button" id="addNewUser_btn" class="btn btn-primary w-100 mb-2">Add
               User</button>
           </form>
@@ -95,7 +130,8 @@
 
 
     </div>
-  </div>
+  </div> -->
+  
   <!-- sweet alert cdn -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <!-- font awesome cdn -->
@@ -112,7 +148,7 @@
     <script type="module" src="./js files/config.js"></script>
     <script type="module" src="./js files/auth.js"></script>
     <script type="module" src="./js files/app.js"></script>
-  <!-- <script type="module" src="./js files/user.js"></script> -->
+  <script type="module" src="./js files/post.js"></script>
 
   <!-- <script>
     // upadate user
