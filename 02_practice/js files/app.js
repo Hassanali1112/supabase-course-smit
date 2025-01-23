@@ -27,13 +27,21 @@ const getUserDetails = async ()=>{
       data: { user },
     } = await supabase.auth.getUser();
     if(user){
-      // console.log(user)
+      
         const { data, error } = await supabase
           .from("usersdata")
           .select("userName, userEmail, userId")
           .eq("userId", user.id);
           if(data){
             console.log(data)
+            const currentUserData = {
+              name : data[0].userName,
+              email : data[0].userEmail,
+              userId : user.id,
+              id : data[0].userId
+            }
+            localStorage.setItem("currentUserData",JSON.stringify(currentUserData))
+
           }
     }
   } catch (error) {
@@ -43,5 +51,6 @@ const getUserDetails = async ()=>{
 
 
 }
+console.log(JSON.parse(localStorage.getItem("currentUserData")));
 
 window.onload = getUserDetails()
