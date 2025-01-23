@@ -20,3 +20,28 @@
 // };
 
 // window.onload = isSessionActive();
+const getUserDetails = async ()=>{
+  console.log("user data getting ....")
+  try {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if(user){
+      // console.log(user)
+        const { data, error } = await supabase
+          .from("usersdata")
+          .select("userName, userEmail, userId")
+          .eq("userId", user.id);
+          if(data){
+            console.log(data)
+          }
+    }
+  } catch (error) {
+    
+  }
+
+
+
+}
+
+window.onload = getUserDetails()

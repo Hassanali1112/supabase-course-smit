@@ -113,7 +113,7 @@ if (signin_btn) {
           text: "welcome User",
           icon: "success",
         });
-        window.location.assign("/dashbord.html");
+        window.location.href = "./dashbord.html"
       }
     } catch (error) {}
   });
